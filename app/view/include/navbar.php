@@ -39,6 +39,7 @@
                                 <ul>
                                     <li><a href="<?php echo URLROOT;?>/user/dashboard">Home</a></li>
                                     <li><a href="<?php echo URLROOT;?>/user/shipment">Shipment</a></li>
+                                    <li><a href="<?php echo URLROOT;?>/user/logout">Logout</a></li>
                                 </ul>
                             <?php else:?>
                                 <ul>

@@ -9,7 +9,7 @@
 	define('APPROOT', dirname(dirname(__FILE__)));
 
 	//url root
-	define('URLROOT', 'http://localhost/seagull');
+	define('URLROOT', 'http://seagull.test');
 
 	//site name
 	define('SITENAME', 'Seagull');

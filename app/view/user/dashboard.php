@@ -18,6 +18,7 @@
   							<th>Departure</th>
   							<th>Arrival</th>
   							<th>Update</th>
+							<th>Remove</th>
   						</tr>
 
   						<?php foreach($data['shipment'] as $shipment) :?>
@@ -33,6 +34,14 @@
   							<td><?php echo $shipment->ddate;?></td>
   							<td><?php echo $shipment->adate;?></td>
   							<td><a href="<?php echo URLROOT;?>/user/update/<?php echo $shipment->id;?>"><span class="fa fa-arrow-up" style="color: #14614f;margin-left: 20px;"></span></a></td>
+							<form action="<?= URLROOT ?>/user/remove/<?= $shipment->id ?>" method="POST">
+                                <td>
+                                
+									<button type="submit" class="btn">
+										<span class="fa fa-remove" style="color: #14614f;margin-left: 20px;"></span>
+									</button>
+                                </td>
+                            </form>
   						</tr>
   						<?php endforeach;?>
   					</table>

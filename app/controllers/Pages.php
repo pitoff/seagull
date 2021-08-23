@@ -51,10 +51,10 @@
 						$data = [
 							'usertrack' => $usertrack
 						];
-						$this->view('pages/track', $data);
+						$this->view('pages/tracked', $data);
 					}else{
-						flash('message', 'Incorrect login details');
-						$this->view('pages/track', $data);
+						flashdanger('message', 'No shipping details were found');
+						redirect('pages/track');
 					}
 
 			}else{

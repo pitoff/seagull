@@ -76,4 +76,14 @@
 				return false;
 			}
 		}
+
+		public function removeShipment($id){
+			$this->db->query("DELETE FROM shipment WHERE id = :id");
+			$this->db->bind(':id', $id);
+			if($this->db->execute()){
+				return true;
+			}else{
+				return false;
+			}
+		}
 	}

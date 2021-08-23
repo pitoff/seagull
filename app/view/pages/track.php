@@ -25,6 +25,7 @@
                 <div class="col-lg-9">
                     <div class="track">
                         <h3>Enter Your Email and Track Your Cargo/Shipment</h3>
+                        <div><em><?php flashdanger('message');?></em></div>
                         <div class="tracking-form">
                             <div class="row">
                             <form method="POST" action="<?php echo URLROOT;?>/pages/track">
@@ -49,20 +50,4 @@
     </section>
     <!-- end track-section -->
 
-    <!-- map section -->
-    	<section class="map-section">
-    		<div class="container">
-    			<div class="row">
-    				<div class="col-lg-12">
-    					<div class=" col-lg-12 mapouter">
-                            <?php foreach($data['usertrack'] as $usertrack) :?>
-                            <div class="gmap_canvas"><iframe width = "100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=<?php echo $usertrack->current_location;?>" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net"></a>
-                            </div>
-                        <?php endforeach;?>
-                        </div>
-    				</div>
-    			</div>
-    		</div>
-    	</section>
-    <!-- end map -->
 <?php require APPROOT .'/view/include/footer.php';?>

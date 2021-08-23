@@ -52,6 +52,14 @@
 			redirect('user/dashboard');
 		}
 
+		public function logout(){
+			unset($_SESSION['id']);
+			unset($_SESSION['username']);
+			unset($_SESSION['role']);
+			session_destroy();
+			redirect('user/adminlogin');
+		}
+
 		public function dashboard(){
 			if (!isLoggedIn()) {
 				redirect('user/adminlogin');
@@ -249,6 +257,21 @@
 					'adate_err' => ''
 				];
 				$this->view('user/update', $data);
+			}
+		}
+
+		public function remove($id){
+			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+				$data = [
+					'id' => $id
+				];
+				if ($this->userModel->removeShipment($id)) {
+					redirect('user/dashboard');
+				} else {
+					die('something went wrong');
+				}
+			} else {
+				redirect('user/dashboard');
 			}
 		}
 		
