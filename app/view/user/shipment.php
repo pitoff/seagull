@@ -12,6 +12,9 @@
                             	<div class="form-group col-lg-6 col-md-6 col-sm-6" style="opacity: 0.7;">
                             		<input type="text" class="form-control" value="<?php echo $data['sender'];?>" name="sender" placeholder="Sender">
                             	</div>
+								<div class="form-group col-lg-6 col-md-6 col-sm-6" style="opacity: 0.7;">
+                            		<input type="email" class="form-control" value="<?php echo $data['email'];?>" name="email" placeholder="Receiver_Email">
+                            	</div>
                             	<div class="form-group col-lg-6 col-md-6 col-sm-6" style="opacity: 0.7;">
                             		<input type="text" class="form-control" value="<?php echo $data['receiver'];?>" name="receiver" placeholder="Receiver">
                             	</div>
@@ -23,6 +26,9 @@
                             	</div>
                             	<div class="form-group col-lg-6 col-md-6 col-sm-6" style="opacity: 0.7;">
                             		<input type="text" class="form-control" value="<?php echo $data['destination'];?>" name="destination" placeholder="destination">
+                            	</div>
+								<div class="form-group col-lg-6 col-md-6 col-sm-6" style="opacity: 0.7;">
+                            		<input type="text" class="form-control" value="<?php echo $data['receiver_addr'];?>" name="receiver_addr" placeholder="Receiver_addr">
                             	</div>
                             	<div class="form-group col-lg-6 col-md-6 col-sm-6" style="opacity: 0.7;">
                             		<input type="text" class="form-control" value="<?php echo $data['clocation'];?>" name="clocation" placeholder="current location">

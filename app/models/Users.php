@@ -35,11 +35,13 @@
 		}
 
 		public function shipment($data){
-			$this->db->query("INSERT INTO shipment (tracking_id, sender, receiver, qgoods, nature_of_goods, destination, current_location, status, ddate, adate) VALUES (:track_id, :sender, :receiver, :qgoods, :ngoods, :destination, :clocation, :status, :ddate, :adate)");
+			$this->db->query("INSERT INTO shipment (tracking_id, sender, receiver, email, receiver_addr, qgoods, nature_of_goods, destination, current_location, status, ddate, adate) VALUES (:track_id, :sender, :receiver, :email, :receiver_addr, :qgoods, :ngoods, :destination, :clocation, :status, :ddate, :adate)");
 
 			$this->db->bind(':track_id', $data['track_id']);
 			$this->db->bind(':sender', $data['sender']);
 			$this->db->bind(':receiver', $data['receiver']);
+			$this->db->bind(':email', $data['email']);
+			$this->db->bind(':receiver_addr', $data['receiver_addr']);
 			$this->db->bind(':qgoods', $data['qgoods']);
 			$this->db->bind(':ngoods', $data['ngoods']);
 			$this->db->bind(':destination', $data['destination']);
@@ -56,12 +58,14 @@
 		}
 
 		public function updateShipment($data){
-			$this->db->query("UPDATE shipment SET tracking_id = :track_id, sender = :sender, receiver = :receiver, qgoods= :qgoods, nature_of_goods = :ngoods, destination = :destination, current_location = :clocation, status = :status, ddate = :ddate, adate= :adate WHERE id = :id");
+			$this->db->query("UPDATE shipment SET tracking_id = :track_id, sender = :sender, receiver = :receiver, email = :email, receiver_addr = :receiver_addr, qgoods= :qgoods, nature_of_goods = :ngoods, destination = :destination, current_location = :clocation, status = :status, ddate = :ddate, adate= :adate WHERE id = :id");
 
 			$this->db->bind(':id', $data['id']);
 			$this->db->bind(':track_id', $data['track_id']);
 			$this->db->bind(':sender', $data['sender']);
 			$this->db->bind(':receiver', $data['receiver']);
+			$this->db->bind(':email', $data['email']);
+			$this->db->bind(':receiver_addr', $data['receiver_addr']);
 			$this->db->bind(':qgoods', $data['qgoods']);
 			$this->db->bind(':ngoods', $data['ngoods']);
 			$this->db->bind(':destination', $data['destination']);

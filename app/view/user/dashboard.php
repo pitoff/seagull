@@ -9,10 +9,12 @@
   						<tr style="font-family: 'Roboto';">
   							<th>trackinID</th>
   							<th>Sender</th>
+							<th>Receiver_Email</th>
   							<th>Receiver</th>
   							<th>Quantity</th>
   							<th>Nature</th>
   							<th>Destination</th>
+							<th>Address</th>
   							<th>Current_location</th>
   							<th>Status</th>
   							<th>Departure</th>
@@ -25,10 +27,12 @@
   						<tr>
 							<td><?php echo $shipment->tracking_id;?></td>
   							<td><?php echo $shipment->sender;?></td>
+							<td><?php echo $shipment->email;?></td>
   							<td><?php echo $shipment->receiver;?></td>
   							<td><?php echo $shipment->qgoods;?></td>
   							<td><?php echo $shipment->nature_of_goods;?></td>
   							<td><?php echo $shipment->destination;?></td>
+							<td><?php echo $shipment->receiver_addr;?></td>
   							<td><?php echo $shipment->current_location;?></td>
   							<td><?php echo $shipment->status;?></td>
   							<td><?php echo $shipment->ddate;?></td>

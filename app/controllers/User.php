@@ -79,10 +79,12 @@
 				$data=[
 					'track_id' => trim($_POST['track_id']),
 					'sender' => trim($_POST['sender']),
+					'email' => trim($_POST['email']),
 					'receiver' => trim($_POST['receiver']),
 					'qgoods' => trim($_POST['qgoods']),
 					'ngoods' => trim($_POST['ngoods']),
 					'destination' => trim($_POST['destination']),
+					'receiver_addr' => trim($_POST['receiver_addr']),
 					'clocation' => trim($_POST['clocation']),
 					'status' => trim($_POST['status']),
 					'ddate' => trim($_POST['ddate']),
@@ -101,6 +103,9 @@
 					if (empty($data['sender'])) {
 						$data['sender_err'] = 'sender is empty';
 					}
+					if (empty($data['email'])) {
+						$data['email_err'] = 'sender email is empty';
+					}
 					if (empty($data['receiver'])) {
 						$data['receiver_err'] = 'receiver is empty';
 					}
@@ -112,6 +117,9 @@
 					}
 					if (empty($data['destination'])) {
 						$data['destination_err'] = 'please input a destination';
+					}
+					if (empty($data['receiver_addr'])) {
+						$data['receiver_addr_err'] = 'please input a receiver address';
 					}
 					if (empty($data['clocation'])) {
 						$data['clocation_err'] = 'current location of goods';
@@ -126,7 +134,7 @@
 						$data['status_err'] = 'status is empty';
 					}
 
-					if (empty($data['sender_err']) && empty($data['receiver_err']) && empty($data['qgoods_err']) && empty($data['ngoods_err']) && empty($data['destination_err']) && empty($data['clocation_err']) && empty($data['status_err']) && empty($data['ddate_err']) && empty($data['adate_err'])) {
+					if (empty($data['sender_err']) && empty($data['email_err']) && empty($data['receiver_err']) && empty($data['qgoods_err']) && empty($data['ngoods_err']) && empty($data['destination_err']) && empty($data['receiver_addr_err']) && empty($data['clocation_err']) && empty($data['status_err']) && empty($data['ddate_err']) && empty($data['adate_err'])) {
 
 						if ($this->userModel->shipment($data)) {
 							flash('message', 'shipment added');
@@ -142,10 +150,12 @@
 				$data = [
 					'track_id' => $result,
 					'sender' => '',
+					'email' => '',
 					'receiver' => '',
 					'qgoods' => '',
 					'ngoods' => '',
 					'destination' => '',
+					'receiver_addr' => '',
 					'clocation' => '',
 					'status' => '',
 					'ddate' => '',
@@ -172,10 +182,12 @@
 					'id' => $id,
 					'track_id' => trim($_POST['track_id']),
 					'sender' => trim($_POST['sender']),
+					'email' => trim($_POST['email']),
 					'receiver' => trim($_POST['receiver']),
 					'qgoods' => trim($_POST['qgoods']),
 					'ngoods' => trim($_POST['ngoods']),
 					'destination' => trim($_POST['destination']),
+					'receiver_addr' => trim($_POST['receiver_addr']),
 					'clocation' => trim($_POST['clocation']),
 					'status' => trim($_POST['status']),
 					'ddate' => trim($_POST['ddate']),
@@ -194,6 +206,9 @@
 					if (empty($data['sender'])) {
 						$data['sender_err'] = 'sender is empty';
 					}
+					if (empty($data['email'])) {
+						$data['email_err'] = 'sender email is empty';
+					}
 					if (empty($data['receiver'])) {
 						$data['receiver_err'] = 'receiver is empty';
 					}
@@ -205,6 +220,9 @@
 					}
 					if (empty($data['destination'])) {
 						$data['destination_err'] = 'please input a destination';
+					}
+					if (empty($data['receiver_addr'])) {
+						$data['receiver_addr_err'] = 'please input a receiver address';
 					}
 					if (empty($data['clocation'])) {
 						$data['clocation_err'] = 'current location of goods';
@@ -219,7 +237,7 @@
 						$data['status_err'] = 'status is empty';
 					}
 
-					if (empty($data['sender_err']) && empty($data['receiver_err']) && empty($data['qgoods_err']) && empty($data['ngoods_err']) && empty($data['destination_err']) && empty($data['clocation_err']) && empty($data['status_err']) && empty($data['ddate_err']) && empty($data['adate_err'])) {
+					if (empty($data['sender_err']) && empty($data['email_err']) && empty($data['receiver_err']) && empty($data['qgoods_err']) && empty($data['ngoods_err']) && empty($data['destination_err']) && empty($data['receiver_addr_err']) && empty($data['clocation_err']) && empty($data['status_err']) && empty($data['ddate_err']) && empty($data['adate_err'])) {
 
 						if ($this->userModel->updateShipment($data)) {
 							flash('message', 'shipment updated');
@@ -237,10 +255,12 @@
 					'id' => $id,
 					'track_id' => $user->tracking_id,
 					'sender' => $user->sender,
+					'email' => $user->email,
 					'receiver' => $user->receiver,
 					'qgoods' => $user->qgoods,
 					'ngoods' => $user->nature_of_goods,
 					'destination' => $user->destination,
+					'receiver_addr' => $user->receiver_addr,
 					'clocation' => $user->current_location,
 					'status' => $user->status,
 					'ddate' => $user->ddate,
